@@ -56,6 +56,18 @@ int insereLista(Lista *lista, char nome[41]) {
   lista->tam++;
   return 1;
 }
+int removeDaLista(Lista *lista, int pos){
+  No *noAtual;
+  No *noAnterior;
+  noAtual = lista->inicio;
+  for(int i = 0; i <= pos; i++){
+    noAnterior = noAtual;
+    noAtual = noAtual->proximo;
+  }
+  printf("%s perdeu o sorteio", noAnterior->valor);
+  free(noAnterior);
+
+}
 int main(void) {
   Lista lista;
   criar_lista(&lista);
